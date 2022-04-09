@@ -1,23 +1,24 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Board } from './components/Board/Board';
+import { Home } from './components/Home';
 
 function App() {
-  const [boardWidth, setBoardWidth] = useState();
 
-  useEffect(() => {
-    function handleResize() {
-      const container = document.getElementsByClassName('boardWrapper')[0];
-      setBoardWidth(container.offsetWidth - 30);
-    }
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
-    <Board boardWidth={boardWidth}/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Board />} />
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
+
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
