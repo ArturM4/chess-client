@@ -4,4 +4,8 @@
   align-items: center;
   max-width: 700px;
   margin: 30px auto;
+  /*   background-color: aquamarine;
+  min-height: 900px; */
+  width: 100%;
+  overflow: hidden;
 }
