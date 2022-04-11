@@ -14,7 +14,12 @@ export function Home() {
           <Col xs={3}>
             <div>
               <h1 className='mb-4 mt-3 text-light text-center'>Escacs</h1>
-              <Button size='lg' onClick={handleNav('game')}>Un Jugador</Button>
+
+              <Stack gap={5} className="mx-auto">
+                <Button size='lg' className='ms-2 py-3' onClick={handleNav('game')}>Un Jugador</Button>
+                <Button size='lg' className='ms-2 py-3' onClick={handleNav('game')}>Multijugador</Button>
+                <Button size='lg' className='ms-2 py-3' onClick={handleNav('game')}>Canviar estils</Button>
+              </Stack>
 
             </div>
           </Col>
